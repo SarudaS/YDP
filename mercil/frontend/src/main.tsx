@@ -5,15 +5,30 @@ import App from './App.tsx';
 import Tester from './pages/tester.tsx';
 import ShowDetail from './components/ShowDetail.tsx'; 
 import './index.css';
+import { SearchProvider } from './context/AppContext.tsx';
+import { AuthProvider } from './context/UserContext.tsx';
+import Login from './components/Login.tsx';
+import Register from './components/Register.tsx'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import Favorite from './pages/favorite.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/tester" element={<Tester />} />
-        <Route path="/detail/:id" element={<ShowDetail />} />
-      </Routes>
+    <SearchProvider>
+      <AuthProvider>
+          <ToastContainer />
+          <Routes>
+            <Route path="/" element={<App />} />
+            <Route path="/tester" element={<Tester />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/favorite" element={<Favorite />} />
+            <Route path="/detail/:id" element={<ShowDetail />} />
+          </Routes>
+        </AuthProvider>
+      </SearchProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

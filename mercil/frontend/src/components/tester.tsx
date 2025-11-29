@@ -1,4 +1,3 @@
-import React from 'react'
 import { Home, Building2, Hotel, Warehouse } from "lucide-react";
 
 const tester = () => {

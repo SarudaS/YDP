@@ -1,26 +1,21 @@
-import Navbar from '../components/navbar.jsx' // แก้ไข: เพิ่ม .jsx
-import PropertyHomePage from '../components/PropertyHome.jsx' // แก้ไข: เพิ่ม .jsx
-import AISearch from '../components/AISearch.jsx' // แก้ไข: เพิ่ม .jsx
-import Boxsearch from '../components/Boxsearch.jsx' // แก้ไข: เพิ่ม .jsx
-import Propertycard from '../components/Propertycard.jsx' // แก้ไข: เพิ่ม .jsx
-import ShowDetail from '../components/ShowDetail'
+import Navbar from "../components/navbar.jsx"; // แก้ไข: เพิ่ม .jsx
+import AISearch from "../components/AISearch.jsx"; // แก้ไข: เพิ่ม .jsx
+import Boxsearch from "../components/Boxsearch.jsx"; // แก้ไข: เพิ่ม .jsx
+import Propertycard from "../components/Propertycard.jsx"; // แก้ไข: เพิ่ม .jsx
 
 const Tester = () => {
   return (
-    <div className='bg-gradient-to-br from-amber-50 via-white to-amber-50'>
-     <Navbar />
-      
+    <div className="bg-gradient-to-br from-amber-50 via-white to-amber-50">
+      <Navbar />
+
       {/* อันแรห เต็มหน้าจอ - เพิ่ม pt-20 เพื่อชดเชย Navbar Spacer และปรับโทนสี */}
       <section className="min-h-screen flex flex-col justify-end pt-20 pb-32 px-8">
         <div className="flex-1 flex items-center justify-center">
           <div className="text-center space-y-6">
-            
             <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-amber-800 via-amber-700 to-stone-700 bg-clip-text text-transparent">
               ค้นหาอสังหาริมทรัพย์
             </h1>
-            <p className="text-xl text-stone-700 max-w-2xl mx-auto">
-              text
-            </p>
+            <p className="text-xl text-stone-700 max-w-2xl mx-auto">text</p>
           </div>
         </div>
         <div className="w-full">
@@ -49,20 +44,15 @@ const Tester = () => {
               คัดสรรทรัพย์สินที่น่าสนใจสำหรับคุณ
             </p>
           </div>
-          
+
           {/* Property Cards จะอยู่ที่นี่ */}
           <div className="space-y-6 ">
-           <Propertycard />
-          </div>
-
-          {/* เกี่ยวกับ */}
-          <div>
-            
+            <Propertycard />
           </div>
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default Tester
+export default Tester;

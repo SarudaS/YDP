@@ -1,5 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
-import { properties } from "../assets/properties"; // Import ข้อมูลที่แก้ไขแล้ว
+import { useContext } from 'react'
+import { SearchContext } from "../context/AppContext";
+
 import {
   CircleArrowLeft,
   Heart,
@@ -19,9 +21,15 @@ const BG_COLOR = " bg-stone-50"; // สีพื้นหลังอ่อน
 
 const ShowDetail = () => {
   const { id } = useParams();
-  const propertyId = Number(id);
-  const property = properties.find((item) => item.id === propertyId);
+  const context = useContext(SearchContext);
   const navigate = useNavigate();
+  console.log("ID" , id);
+  if (!context) return null;
+  const { properties } = context;
+
+  const property = properties.find(
+  (item) => item._id === id || item._id?.toString() === id
+  );
 
   if (!property) {
     console.error("ไม่พบข้อมูลทรัพย์สินสำหรับ ID:", id); 
@@ -62,11 +70,11 @@ const ShowDetail = () => {
             <div className="relative overflow-hidden rounded-lg shadow-md mb-4"> 
                 <img
                     className="w-full h-auto object-cover transition-all duration-300"
-                    src={property.image}
+                    src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     alt={property.title}
                     onError={(e) => {
                         (e.target as HTMLImageElement).onerror = null; 
-                        (e.target as HTMLImageElement).src = `https://placehold.co/800x600/bdae9c/3f3f46?text=Image+Placeholder`;
+                        (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
                     }}
                 />
                  {/* Text Placeholder for Image */}
@@ -98,7 +106,7 @@ const ShowDetail = () => {
               </div>
               
               <h1 className="text-4xl sm:text-5xl font-bold text-amber-800 mb-2">
-                $ {property.price}
+                $ {Number(property.price)?.toLocaleString()}
               </h1>
               <p className="text-sm text-stone-500">{property.location}</p>
             </div>

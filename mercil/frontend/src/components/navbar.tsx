@@ -1,11 +1,18 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { Menu, X, Home, Building2, Info, Heart, Mail, User } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { AuthContext } from '../context/UserContext';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+
+  const context = useContext(AuthContext)
+  if(!context) return null;
+
+  const { user , logout } = context
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,12 +65,12 @@ const Navbar = () => {
                 { name: "หน้าหลัก", icon: Home },
                 { name: "ทรัพย์สิน", icon: Building2 },
                 { name: "เกี่ยวกับ", icon: Info },
-                { name: "รายการโปรด", icon: Heart },
+                { name: "รายการโปรด", icon: Heart , link: '/favorite'  },
                 { name: "ติดต่อ", icon: Mail },
               ].map((item) => (
                 <li key={item.name} className="group/item relative">
                   <a
-                    href="#"
+                    href={item.link || '#'}
                     className="flex items-center gap-2 px-4 py-2 rounded-lg text-[#583c2a] transition-all duration-150 group-hover/item:bg-[#e8dfda] group-hover/item:text-[#a16545]"
                   >
                     <item.icon className="w-4 h-4" />
@@ -75,10 +82,18 @@ const Navbar = () => {
 
             {/* Login Button */}
             <div className="hidden md:block">
-              <button className="px-6 py-2.5 bg-white rounded-lg shadow-lg flex items-center gap-2 text-[#7a4f35] hover:bg-[#f4efec] transition">
-                <User className="w-4 h-4" />
-                เข้าสู่ระบบ
-              </button>
+              {user ? (
+                <div className="px-6 py-2.5 bg-white rounded-lg shadow-lg flex items-center gap-2 text-[#7a4f35] cursor-pointer hover:bg-[#f4efec] transition">
+                  <User className="w-4 h-4" />
+                  {user.name}
+                  <button onClick={logout} className="ml-2 text-red-500 hover:text-red-700">Logout</button>
+                </div>
+              ) : (
+                <Link to={'/login'} className="px-6 py-2.5 bg-white rounded-lg shadow-lg flex items-center gap-2 text-[#7a4f35] hover:bg-[#f4efec] transition">
+                  <User className="w-4 h-4" />
+                  เข้าสู่ระบบ
+                </Link>
+              )}
             </div>
 
             {/* Mobile Menu Button */}
@@ -102,12 +117,12 @@ const Navbar = () => {
               { name: "หน้าหลัก", icon: Home },
               { name: "ทรัพย์สิน", icon: Building2 },
               { name: "เกี่ยวกับ", icon: Info },
-              { name: "รายการโปรด", icon: Heart },
+              { name: "รายการโปรด", icon: Heart , link: '/favorite'  },
               { name: "ติดต่อ", icon: Mail },
             ].map((item) => (
               <a
+                href={item.link || '#'}
                 key={item.name}
-                href="#"
                 className="flex items-center gap-3 px-4 py-3 rounded-lg text-[#7a4f35] hover:bg-[#e8dfda]"
               >
                 <item.icon className="w-5 h-5" />
@@ -115,10 +130,20 @@ const Navbar = () => {
               </a>
             ))}
 
-            <button className="w-full px-6 py-2.5 bg-white rounded-lg shadow-lg flex items-center justify-center gap-2 text-[#7a4f35]">
-              <User className="w-5 h-5" />
-              เข้าสู่ระบบ
-            </button>
+            <Link to={'/register'} className="w-full px-6 py-2.5 bg-white rounded-lg shadow-lg flex items-center justify-center gap-2 text-[#7a4f35]">
+              {user ? (
+                <div className="px-6 py-2.5 bg-white rounded-lg shadow-lg flex items-center gap-2 text-[#7a4f35] cursor-pointer hover:bg-[#f4efec] transition">
+                  <User className="w-4 h-4" />
+                  {user.name}
+                  <button onClick={logout} className="ml-2 text-red-500 hover:text-red-700">Logout</button>
+                </div>
+              ) : (
+                <Link to={'/login'} className="px-6 py-2.5 bg-white rounded-lg shadow-lg flex items-center gap-2 text-[#7a4f35] hover:bg-[#f4efec] transition">
+                  <User className="w-4 h-4" />
+                  เข้าสู่ระบบ
+                </Link>
+              )}
+            </Link>
           </div>
         </div>
       </nav>

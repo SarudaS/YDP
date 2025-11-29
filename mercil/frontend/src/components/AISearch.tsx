@@ -1,10 +1,19 @@
-import React,{ useState } from 'react';
+import { useContext, useState } from 'react';
 import { Search, Sparkles } from 'lucide-react';
+import { SearchContext } from '../context/AppContext';
 
 const AISearch = () => {
 
   const [isFocused, setIsFocused] = useState(false);
   const [searchText, setSearchText] = useState('');
+  const context = useContext(SearchContext)
+
+  if(!context) return null;
+  const { search } = context
+
+  const handleSearch = () => {
+    if (searchText.trim()) search(searchText)
+  };
 
   return (
     <div className="w-full max-w-5xl mx-auto">
@@ -41,16 +50,19 @@ const AISearch = () => {
             <input
               type="text"
               value={searchText}
+              onKeyDown={(e) => {if (e.key === 'Enter') handleSearch()}}
               onChange={(e)=> setSearchText(e.target.value)}
               onFocus={()=> setIsFocused(true)}
               onBlur={()=> setIsFocused(false)}
-              placeholder="บ้านเดี่ยวใกล้ BTS"
+              placeholder="บ้านเดี่ยว กว้างๆ ไม่เกิน 5 ล้าน"
               className="flex-1 text-lg text-[#7a4f35] placeholder-[#b49a8d] 
                 bg-transparent outline-none font-light"
             />
 
             {/* Search Button */}
-            <button className="
+            <button
+             onClick={handleSearch}
+             className="
               group relative flex-shrink-0 px-5 py-3 rounded-full shadow-md
               bg-gradient-to-r from-[#b58363] via-[#d7a77a] to-[#c8b8b1]
               hover:from-[#8e5d44] hover:via-[#b58363] hover:to-[#d7a77a]
