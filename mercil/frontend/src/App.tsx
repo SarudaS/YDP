@@ -1,9 +1,9 @@
-import Navbar from './components/navbar.jsx' // แก้ไข: เพิ่ม .jsx
-import AISearch from './components/AISearch.jsx' // แก้ไข: เพิ่ม .jsx
-import Boxsearch from './components/Boxsearch.jsx' // แก้ไข: เพิ่ม .jsx
-import Propertycard from './components/Propertycard.jsx' // แก้ไข: เพิ่ม .jsx
+import Navbar from './components/navbar.jsx' 
+import AISearch from './components/AISearch.jsx' 
+import Boxsearch from './components/Boxsearch.jsx' 
+import Propertycard from './components/Propertycard.jsx' 
 
-const app = () => {
+const App = () => {
   return (
     <div className='bg-gradient-to-br from-amber-50 via-white to-amber-50'>
      <Navbar />
@@ -17,7 +17,7 @@ const app = () => {
               ค้นหาอสังหาริมทรัพย์
             </h1>
             <p className="text-xl text-stone-700 max-w-2xl mx-auto">
-              text
+             
             </p>
           </div>
         </div>
@@ -27,7 +27,7 @@ const app = () => {
       </section>
 
       {/* Boxsearch - ปรับโทนสี */}
-      <section className="bg-white py-16 px-8">
+      <section className=" py-16 px-8">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-[#956748] mb-8 text-center">
             ค้นหาแบบละเอียด
@@ -37,7 +37,7 @@ const app = () => {
       </section>
 
       {/* แนะนำบ้าน - ปรับโทนสี */}
-      <section className="min-h-screen bg-gradient-to-b from-stone-50 to-stone-100 py-16 px-8">
+      <section className="min-h-scree py-16 px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-[#956748] mb-4">
@@ -59,4 +59,4 @@ const app = () => {
   )
 }
 
-export default app
+export default App

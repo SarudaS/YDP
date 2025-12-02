@@ -42,8 +42,8 @@ const Navbar = () => {
           isVisible ? "translate-y-0" : "-translate-y-full"
         } ${
           isScrolled
-            ? "bg-[#f7f6f6]/90 backdrop-blur-xl shadow-md"
-            : "bg-[#ffffff]"
+            ? "bg-[#FFFCFC]/90 border backdrop-blur-xl shadow-md"
+            : "bg-[#FFFCFC]/70 border-b backdrop-blur-xl"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 py-4 md:px-12">
@@ -62,11 +62,11 @@ const Navbar = () => {
             {/* Desktop Menu */}
             <ul className="hidden md:flex items-center space-x-2 font-medium">
               {[
-                { name: "หน้าหลัก", icon: Home },
-                { name: "ทรัพย์สิน", icon: Building2 },
-                { name: "เกี่ยวกับ", icon: Info },
-                { name: "รายการโปรด", icon: Heart , link: '/favorite'  },
-                { name: "ติดต่อ", icon: Mail },
+                { name: "หน้าหลัก", icon: Home , link: '/'},
+                { name: "ทรัพย์สิน", icon: Building2 , link: '#'},
+                { name: "เกี่ยวกับ", icon: Info , link: '/about'},
+                ...(user ? [{ name: "รายการโปรด", icon: Heart, link: '/favorite' }] : []),
+                { name: "ติดต่อ", icon: Mail , link: '/contact'},
               ].map((item) => (
                 <li key={item.name} className="group/item relative">
                   <a
@@ -114,11 +114,11 @@ const Navbar = () => {
         >
           <div className="px-6 py-4 bg-white/90 backdrop-blur-md space-y-2">
             {[
-              { name: "หน้าหลัก", icon: Home },
-              { name: "ทรัพย์สิน", icon: Building2 },
-              { name: "เกี่ยวกับ", icon: Info },
-              { name: "รายการโปรด", icon: Heart , link: '/favorite'  },
-              { name: "ติดต่อ", icon: Mail },
+              { name: "หน้าหลัก", icon: Home , link: '/'},
+              { name: "ทรัพย์สิน", icon: Building2 , link: '#'},
+              { name: "เกี่ยวกับ", icon: Info , link: '#'},
+              ...(user ? [{ name: "รายการโปรด", icon: Heart, link: '/favorite' }] : []),
+              { name: "ติดต่อ", icon: Mail , link: '#'},
             ].map((item) => (
               <a
                 href={item.link || '#'}
@@ -130,20 +130,21 @@ const Navbar = () => {
               </a>
             ))}
 
-            <Link to={'/register'} className="w-full px-6 py-2.5 bg-white rounded-lg shadow-lg flex items-center justify-center gap-2 text-[#7a4f35]">
-              {user ? (
+            {user ? (
                 <div className="px-6 py-2.5 bg-white rounded-lg shadow-lg flex items-center gap-2 text-[#7a4f35] cursor-pointer hover:bg-[#f4efec] transition">
                   <User className="w-4 h-4" />
                   {user.name}
                   <button onClick={logout} className="ml-2 text-red-500 hover:text-red-700">Logout</button>
                 </div>
               ) : (
-                <Link to={'/login'} className="px-6 py-2.5 bg-white rounded-lg shadow-lg flex items-center gap-2 text-[#7a4f35] hover:bg-[#f4efec] transition">
+                <Link
+                  to="/login"
+                  className="w-full px-6 py-2.5 bg-white rounded-lg shadow-lg flex items-center justify-center gap-2 text-[#7a4f35] hover:bg-[#f4efec] transition"
+                >
                   <User className="w-4 h-4" />
                   เข้าสู่ระบบ
                 </Link>
               )}
-            </Link>
           </div>
         </div>
       </nav>

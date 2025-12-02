@@ -3,24 +3,21 @@ import { Search, Sparkles } from 'lucide-react';
 import { SearchContext } from '../context/AppContext';
 
 const AISearch = () => {
-
   const [isFocused, setIsFocused] = useState(false);
   const [searchText, setSearchText] = useState('');
-  const context = useContext(SearchContext)
+  const context = useContext(SearchContext);
 
-  if(!context) return null;
-  const { search } = context
+  if (!context) return null;
+  const { search } = context;
 
   const handleSearch = () => {
-    if (searchText.trim()) search(searchText)
+    if (searchText.trim()) search(searchText);
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto">
-      
+    <div className="w-full max-w-5xl mx-auto px-4 md:px-0">
       <div className="relative group">
-
-        {/* Glow รอบนอก (ทองแดงนุ่ม) */}
+        {/* Glow รอบนอก */}
         <div className="
           absolute -inset-1 rounded-full blur-xl opacity-0 
           group-hover:opacity-70 transition duration-500
@@ -36,14 +33,14 @@ const AISearch = () => {
             group-hover:shadow-[#c8b8b1]/50
           `}
         >
-          <div className="flex items-center px-6 py-4 gap-4">
+          <div className="flex items-center px-4 md:px-6 py-3 md:py-4 gap-3 md:gap-4">
 
-            {/* AI Icon กลมสีทองแดง */}
-            <div className="w-12 h-12 rounded-full bg-gradient-to-br
+            {/* AI Icon */}
+            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br
               from-[#764b30] via-[#c8b8b1] to-[#a0662f]
               flex items-center justify-center shadow-md"
             >
-              <Sparkles className="w-6 h-6 text-white" strokeWidth={2.5}/>
+              <Sparkles className="w-5 h-5 md:w-6 md:h-6 text-white" strokeWidth={2.5}/>
             </div>
 
             {/* Input */}
@@ -55,7 +52,7 @@ const AISearch = () => {
               onFocus={()=> setIsFocused(true)}
               onBlur={()=> setIsFocused(false)}
               placeholder="บ้านเดี่ยว กว้างๆ ไม่เกิน 5 ล้าน"
-              className="flex-1 text-lg text-[#7a4f35] placeholder-[#b49a8d] 
+              className="flex-1 text-sm md:text-lg text-[#7a4f35] placeholder-[#b49a8d] 
                 bg-transparent outline-none font-light"
             />
 
@@ -63,7 +60,7 @@ const AISearch = () => {
             <button
              onClick={handleSearch}
              className="
-              group relative flex-shrink-0 px-5 py-3 rounded-full shadow-md
+              group relative flex-shrink-0 px-4 md:px-5 py-2 md:py-3 rounded-full shadow-md
               bg-gradient-to-r from-[#b58363] via-[#d7a77a] to-[#c8b8b1]
               hover:from-[#8e5d44] hover:via-[#b58363] hover:to-[#d7a77a]
               transition-all duration-300 hover:scale-105 hover:shadow-lg
@@ -82,7 +79,7 @@ const AISearch = () => {
               </div>
 
               <div className="relative flex items-center gap-1">
-                <Search className="w-7 h-7 text-white" strokeWidth={2.3}/>
+                <Search className="w-5 h-5 md:w-7 md:h-7 text-white" strokeWidth={2.3}/>
               </div>
             </button>
 

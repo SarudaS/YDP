@@ -1,24 +1,26 @@
-import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../context/UserContext";
+import { useContext, useState } from "react"
+import { Link , useNavigate } from "react-router-dom"
+import { AuthContext } from "../context/UserContext"
 import { toast } from "react-toastify";
 
+
 const Register = () => {
-  const context = useContext(AuthContext);
-  const [name, setName] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-  const navigate = useNavigate();
 
-  if (!context) return null;
-  const { register } = context;
+  const context = useContext(AuthContext)
+  const [name , setName] = useState<string>('')
+  const [email , setEmail] = useState<string>('')
+  const [password , setPassword] = useState<string>('')
+  const navigate = useNavigate()
 
+  if(!context) return null
+  const { register } = context
+  
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await register(name, email, password);
-      toast.success("Register success!");
-      navigate("/tester");
+      await register(name , email, password);
+      toast.success("Login success!");
+      navigate("/"); 
     } catch (err: any) {
       toast.error(err.message);
     }
@@ -94,7 +96,7 @@ const Register = () => {
         </div>
       </form>
     </div>
-  );
-};
+  )
+}
 
-export default Register;
+export default Register

@@ -1,4 +1,4 @@
-import { createContext, useState, type ReactNode , useEffect } from 'react';
+import { createContext, useState, type ReactNode, useEffect } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
@@ -7,12 +7,14 @@ interface AuthContextType {
   register: (name: string, email: string, password: string) => Promise<void>;
   login: (email: string, password: string) => Promise<void>;
   logout: () => void;
+  loading: boolean; 
 }
 
 export const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<{ name: string; token: string } | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -20,7 +22,15 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
     if (token && username) {
       setUser({ name: username, token: token });
+    } else { 
+      // เอาไว้เช็ต user
+      setUser({
+        name: " TesterUser",
+        token: "test-token-12345"
+      })
     }
+    
+    setLoading(false);
   }, []);
 
   const register = async (name: string, email: string, password: string) => {
@@ -30,9 +40,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       throw new Error(res.data.message);
     }
 
-  setUser({ name: res.data.username, token: res.data.token });
-  localStorage.setItem('token', res.data.token);
-  localStorage.setItem('username', res.data.username);
+    setUser({ name: res.data.username, token: res.data.token });
+    localStorage.setItem('token', res.data.token);
+    localStorage.setItem('username', res.data.username);
   };
 
   const login = async (email: string, password: string) => {
@@ -41,9 +51,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       throw new Error(res.data.message);
     }
 
-  setUser({ name: res.data.username, token: res.data.token });
-  localStorage.setItem('token', res.data.token);
-  localStorage.setItem('username', res.data.username);
+    setUser({ name: res.data.username, token: res.data.token });
+    localStorage.setItem('token', res.data.token);
+    localStorage.setItem('username', res.data.username);
   };
 
   const logout = () => {
@@ -55,7 +65,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, login , logout , register}}>
+    <AuthContext.Provider value={{ user, login, logout, register, loading }}> 
       {children}
     </AuthContext.Provider>
   );

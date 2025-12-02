@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App.tsx';
-import Tester from './pages/tester.tsx';
 import ShowDetail from './components/ShowDetail.tsx'; 
 import './index.css';
 import { SearchProvider } from './context/AppContext.tsx';
@@ -11,7 +10,9 @@ import Login from './components/Login.tsx';
 import Register from './components/Register.tsx'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import Favorite from './pages/favorite.tsx';
+import Favorite from './pages/Favorite.tsx';
+import Aboutpage from './pages/Aboutpage.tsx';
+import ContactPage from './pages/ContactPage.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -21,11 +22,12 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <ToastContainer />
           <Routes>
             <Route path="/" element={<App />} />
-            <Route path="/tester" element={<Tester />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/favorite" element={<Favorite />} />
-            <Route path="/detail/:id" element={<ShowDetail />} />
+            <Route path="/about" element={<Aboutpage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/property/:id" element={<ShowDetail />} />
           </Routes>
         </AuthProvider>
       </SearchProvider>
