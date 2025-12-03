@@ -2,29 +2,30 @@ import Navbar from './components/navbar.jsx'
 import AISearch from './components/AISearch.jsx' 
 import Boxsearch from './components/Boxsearch.jsx' 
 import Propertycard from './components/Propertycard.jsx' 
+import Footer from './components/footer.js'
+import BackgroundSwitcher from './components/BackgroundPicture.jsx'
 
 const App = () => {
   return (
     <div className='bg-gradient-to-br from-amber-50 via-white to-amber-50'>
      <Navbar />
       
-      {/* อันแรห เต็มหน้าจอ - เพิ่ม pt-20 เพื่อชดเชย Navbar Spacer และปรับโทนสี */}
-      <section className="min-h-screen flex flex-col justify-end pt-20 pb-32 px-8">
-        <div className="flex-1 flex items-center justify-center">
-          <div className="text-center space-y-6">
-            
-            <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-amber-800 via-amber-700 to-stone-700 bg-clip-text text-transparent">
-              ค้นหาอสังหาริมทรัพย์
-            </h1>
-            <p className="text-xl text-stone-700 max-w-2xl mx-auto">
-             
-            </p>
+
+      <BackgroundSwitcher>
+        <section className="min-h-screen flex flex-col justify-end pt-20 pb-32 px-8">
+          <div className="flex-1 flex items-center justify-center">
+            <div className="text-center space-y-6 ">
+              <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-amber-800 via-amber-700 to-stone-700 bg-clip-text text-transparent"></h1>
+
+              <p className="text-xl text-stone-700 max-w-2xl mx-auto"></p>
+            </div>
           </div>
-        </div>
-        <div className="w-full">
-          <AISearch />
-        </div>
-      </section>
+
+          <div className="w-full mt-20  my-16">
+            <AISearch />
+          </div>
+        </section>
+      </BackgroundSwitcher>
 
       {/* Boxsearch - ปรับโทนสี */}
       <section className=" py-16 px-8">
@@ -55,6 +56,9 @@ const App = () => {
 
         </div>
       </section>
+      <>
+      <Footer/>
+      </>
     </div>
   )
 }

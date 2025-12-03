@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Building2, Send, MessageSquare } from 'lucide-react';
+import Navbar from '../components/navbar';
 
                 interface FormDataType {
                   name: string;
@@ -33,7 +34,7 @@ import { MapPin, Phone, Mail, Clock, Building2, Send, MessageSquare } from 'luci
 
                   return (
                     <div className="min-h-screen bg-gradient-to-b from-amber-50 to-white">
-                      {/* Hero Section */}
+                      <Navbar />
                       <div className="relative bg-gradient-to-br from-[#c7a496] via-[#b89585] to-[#a87f6f] text-white py-24 overflow-hidden">
                         <div className="absolute inset-0 opacity-10">
                           <div className="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl"></div>
@@ -107,12 +108,12 @@ import { MapPin, Phone, Mail, Clock, Building2, Send, MessageSquare } from 'luci
                         <div className="grid lg:grid-cols-2 gap-12 mb-16">
                           {/* Contact Form */}
                           <div className="bg-white rounded-2xl shadow-lg p-8">
-                            <div className="flex items-center gap-3 mb-6">
+                            <div className="flex items-center gap-3 mb-8">
                               <MessageSquare className="w-6 h-6 text-[#c7a496]" />
                               <h2 className="text-3xl font-bold text-[#8b6f5e]">ส่งข้อความถึงเรา</h2>
                             </div>
 
-                            <div className="space-y-6">
+                            <div className="space-y-12">
                               <div>
                                 <label className="block text-gray-700 font-medium mb-2">
                                   ชื่อ - นามสกุล <span className="text-red-500">*</span>
@@ -223,12 +224,17 @@ import { MapPin, Phone, Mail, Clock, Building2, Send, MessageSquare } from 'luci
                               </div>
 
                               {/* Map Placeholder */}
-                              <div className="mt-6 bg-gradient-to-br from-[#c7a496] to-[#b89585] rounded-xl h-64 flex items-center justify-center text-white">
-                                <div className="text-center">
-                                  <MapPin className="w-16 h-16 mx-auto mb-3 opacity-80" />
-                                  <p className="text-lg font-medium">แผนที่สำนักงานใหญ่</p>
-                                  <p className="text-sm text-amber-100 mt-2">อาคารซันทาวเวอร์ส เอ</p>
-                                </div>
+                              <div className="rounded-lg overflow-hidden shadow-xl border-4 border-white/50 ">
+                                
+                                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d327.4166122477007!2d100.55850966797064!3d13.808298357715108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29db5e602c041%3A0x2eba4e6790060328!2zU0FNIOC4muC4o-C4tOC4qeC4seC4lyDguJrguKPguLTguKvguLLguKPguKrguLTguJnguJfguKPguLHguJ7guKLguYzguKrguLjguILguLjguKHguKfguLTguJcg4LiI4Liz4LiB4Lix4LiUICjguKrguJnguI0uKQ!5e0!3m2!1sth!2sth!4v1764743764635!5m2!1sth!2sth" 
+                                  width="100%" 
+                                  height="350" 
+                                  style={{border:0}} 
+                                  allowFullScreen={true}
+                                  loading="lazy" 
+                                  referrerPolicy="no-referrer-when-downgrade" 
+                                  ></iframe>
+                                
                               </div>
                             </div>
 

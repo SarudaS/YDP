@@ -153,7 +153,7 @@ const Boxsearch = () => {
                   setPriceRange("");
                   setArea("");
                 }}
-                className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base rounded-xl bg-[#f3ece7] border-2 border-[#d7c5b8] hover:border-[#c8b8b1] focus:border-[#b58363] focus:bg-white appearance-none cursor-pointer"
+                className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base rounded-xl text-[#7a4f35] bg-[#f3ece7] border-2 border-[#d7c5b8] hover:border-[#c8b8b1] focus:border-[#b58363] focus:bg-white appearance-none cursor-pointer"
               >
                 <option value="">เลือกประเภท</option>
                 <option value="บ้านเดี่ยว">บ้านเดี่ยว</option>
@@ -170,7 +170,7 @@ const Boxsearch = () => {
               <select
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
-                className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base rounded-xl bg-[#f3ece7] border-2 border-[#d7c5b8] hover:border-[#c8b8b1] focus:border-[#b58363] focus:bg-white appearance-none cursor-pointer"
+                className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base rounded-xl text-[#7a4f35] bg-[#f3ece7] border-2 border-[#d7c5b8] hover:border-[#c8b8b1] focus:border-[#b58363] focus:bg-white appearance-none cursor-pointer"
               >
                 <option value="">เลือกพื้นที่</option>
                 <option value="กรุงเทพ">กรุงเทพ</option>
@@ -187,7 +187,7 @@ const Boxsearch = () => {
               <select
                 value={priceRange}
                 onChange={(e) => setPriceRange(e.target.value)}
-                className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base rounded-xl bg-[#f3ece7] border-2 border-[#d7c5b8] hover:border-[#c8b8b1] focus:border-[#b58363] focus:bg-white appearance-none cursor-pointer"
+                className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base text-[#7a4f35] rounded-xl bg-[#f3ece7] border-2 border-[#d7c5b8] hover:border-[#c8b8b1] focus:border-[#b58363] focus:bg-white appearance-none cursor-pointer"
               >
                 <option value="">เลือกราคา</option>
                 <option value="< 1 ล้าน">ต่ำกว่า 1 ล้าน</option>
@@ -206,7 +206,7 @@ const Boxsearch = () => {
               <select
                 value={area}
                 onChange={(e) => setArea(e.target.value)}
-                className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base rounded-xl bg-[#f3ece7] border-2 border-[#d7c5b8] hover:border-[#c8b8b1] focus:border-[#b58363] focus:bg-white appearance-none cursor-pointer"
+                className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base rounded-xl text-[#7a4f35] bg-[#f3ece7] border-2 border-[#d7c5b8] hover:border-[#c8b8b1] focus:border-[#b58363] focus:bg-white appearance-none cursor-pointer"
               >
                 <option value="">เลือกขนาด</option>
                 <option value="30 - 50 ตรม">30 - 50 ตรม</option>
