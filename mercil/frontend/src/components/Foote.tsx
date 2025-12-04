@@ -1,11 +1,9 @@
-import React from "react";
 import {
   MapPin,
   Phone,
   Mail,
   Facebook,
   Youtube,
-  Building2,
   ExternalLink,
 } from "lucide-react";
 
