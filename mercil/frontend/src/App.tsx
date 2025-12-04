@@ -1,8 +1,8 @@
-import Navbar from './components/navbar.tsx' 
+import Navbar from './components/Navbar_Temp.tsx' 
 import AISearch from './components/AISearch.tsx' 
 import Boxsearch from './components/Boxsearch.tsx' 
 import Propertycard from './components/Propertycard.tsx' 
-import Footer from './components/Footer.tsx'
+import Footer from './components/FooterTEMP.tsx'
 import BackgroundSwitcher from './components/BackgroundPicture.tsx'
 
 const App = () => {

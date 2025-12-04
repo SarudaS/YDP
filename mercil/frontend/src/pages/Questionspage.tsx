@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import Navbar from "../components/navbar";
+import Navbar from "../components/Navbar_Temp";
 
 interface FAQItem {
   question: string;

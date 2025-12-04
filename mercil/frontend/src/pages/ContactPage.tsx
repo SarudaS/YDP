@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Building2, Send, MessageSquare } from 'lucide-react';
-import Navbar from '../components/navbar';
+import Navbar from '../components/Navbar_Temp';
 
                 interface FormDataType {
                   name: string;
