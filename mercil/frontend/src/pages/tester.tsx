@@ -1,5 +1,5 @@
 import BackgroundSwitcher from "../components/BackgroundPicture.tsx";
-import Navbar from "../components/Navbar_Temp.tsx";
+import Navbar from "../components/Navbar.tsx";
 import AISearch from "../components/AISearch.tsx";
 
 const Tester = () => {
