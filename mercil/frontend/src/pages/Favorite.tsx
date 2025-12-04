@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 import { Heart, Share2, MapPin, Bed, Bath, Square } from 'lucide-react';
-import Navbar from '../components/Navbar_New';
+import Navbar from '../components/Navbar';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/UserContext';
 import axios from 'axios';
