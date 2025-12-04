@@ -69,7 +69,7 @@ const Navbar = () => {
             <ul className="hidden md:flex items-center space-x-2 font-medium">
               {[
                 { name: "หน้าหลัก", icon: Home, link: "/" },
-                { name: "คำถามที่พบบ่อย", icon: MessageSquareQuote, link: "#" },
+                { name: "คำถามที่พบบ่อย", icon: MessageSquareQuote, link: "/question" },
                 { name: "เกี่ยวกับ", icon: Info, link: "/about" },
                 ...(user
                   ? [{ name: "รายการโปรด", icon: Heart, link: "/favorite" }]
@@ -131,12 +131,12 @@ const Navbar = () => {
           <div className="px-6 py-4 bg-white/90 backdrop-blur-md space-y-2">
             {[
               { name: "หน้าหลัก", icon: Home, link: "/" },
-              { name: "คำถามที่พบบ่อย", icon: MessageSquareQuote, link: "#" },
+              { name: "คำถามที่พบบ่อย", icon: MessageSquareQuote, link: "/question" },
               { name: "เกี่ยวกับ", icon: Info, link: "/about" },
               ...(user
                 ? [{ name: "รายการโปรด", icon: Heart, link: "/favorite" }]
                 : []),
-              { name: "ติดต่อ", icon: Mail, link: "#" },
+              { name: "ติดต่อ", icon: Mail, link: "/contact" },
             ].map((item) => (
               <a
                 href={item.link || "#"}

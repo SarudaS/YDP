@@ -1,9 +1,8 @@
-import React from "react";
 import BackgroundSwitcher from "../components/BackgroundPicture.tsx";
 import Navbar from "../components/navbar.tsx";
 import AISearch from "../components/AISearch.tsx";
 
-const tester = () => {
+const Tester = () => {
   return (
     <div>
       <Navbar />
@@ -27,4 +26,4 @@ const tester = () => {
   );
 };
 
-export default tester;
+export default Tester;

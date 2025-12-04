@@ -13,7 +13,6 @@ import 'react-toastify/dist/ReactToastify.css'
 import Favorite from './pages/Favorite.tsx';
 import Aboutpage from './pages/Aboutpage.tsx';
 import ContactPage from './pages/ContactPage.tsx';
-import Tester from './pages/tester.tsx';
 import Qpage from './pages/Questionspage.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -30,7 +29,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             <Route path="/about" element={<Aboutpage />} />
             <Route path="/contact" element={<ContactPage/>} />
             <Route path="/question" element={<Qpage />} />
-            <Route path="/tester" element={<Tester />} />
+            <Route path="/property/:id" element={<ShowDetail />} />
             <Route path="/property/:id" element={<ShowDetail />} />
           </Routes>
         </AuthProvider>

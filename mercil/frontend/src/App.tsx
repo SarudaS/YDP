@@ -1,9 +1,9 @@
-import Navbar from './components/navbar.jsx' 
-import AISearch from './components/AISearch.jsx' 
-import Boxsearch from './components/Boxsearch.jsx' 
-import Propertycard from './components/Propertycard.jsx' 
-import Footer from './components/footer.js'
-import BackgroundSwitcher from './components/BackgroundPicture.jsx'
+import Navbar from './components/navbar.tsx' 
+import AISearch from './components/AISearch.tsx' 
+import Boxsearch from './components/Boxsearch.tsx' 
+import Propertycard from './components/Propertycard.tsx' 
+import Footer from './components/Footer.tsx'
+import BackgroundSwitcher from './components/BackgroundPicture.tsx'
 
 const App = () => {
   return (
