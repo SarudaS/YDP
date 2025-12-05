@@ -4,6 +4,7 @@ import Boxsearch from './components/Boxsearch.tsx'
 import Propertycard from './components/Propertycard.tsx' 
 import Footer from './components/Footer.tsx'
 import BackgroundSwitcher from './components/BackgroundPicture.tsx'
+import Propertycomponent from './components/Propertycomponent.tsx'
 
 const App = () => {
   return (
@@ -23,7 +24,7 @@ const App = () => {
               </h1>
               {/* เพิ่มข้อความย่อย (Optional) หรือเว้นไว้ */}
               <p className="text-lg md:text-xl text-stone-200/90 max-w-2xl mx-auto font-light drop-shadow-md">
-                ค้นหาที่พักในฝันของคุณได้ง่ายๆ ด้วย AI
+             
               </p>
             </div>
           </div>
@@ -45,21 +46,34 @@ const App = () => {
         </div>
       </section>
 
-      {/* แนะนำบ้าน */}
-      <section className="py-12 md:py-20 px-4 md:px-8 bg-white/50 backdrop-blur-sm">
+       {/* แนะนำบ้าน - ปรับโทนสี */}
+      <section className="min-h-scree py-16 px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#956748] mb-3 md:mb-4">
-              ทรัพย์สินแนะนำ
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-[#956748] mb-4">
+              ผลการค้นหา
             </h2>
-            <p className="text-base md:text-xl text-[#956748]/80 font-light">
-              คัดสรรทรัพย์สินที่น่าสนใจสำหรับคุณ
+            <p className="text-xl text-[#956748]">
+              รายการทรัพย์สินที่ค้นพบ
             </p>
           </div>
           
-          {/* Property Cards */}
-          <div className="w-full">
-            <Propertycard />
+          {/* Property Cards จะอยู่ที่นี่ */}
+          <div className="space-y-6 ">
+           <Propertycard />
+          </div>
+        <div className="max-w-7xl pt-12 mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-[#956748] mb-4">
+              ทรัพย์สินแนะนำ
+            </h2>
+            <p className="text-xl text-[#956748]">
+              คัดสรรทรัพย์สินที่น่าสนใจสำหรับคุณ
+            </p>
+          </div>
+          <div className="space-y-6 ">
+           <Propertycomponent />
+          </div>
           </div>
         </div>
       </section>
