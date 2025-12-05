@@ -2,8 +2,10 @@ import { useState , useContext } from "react"
 import { Link , useNavigate} from "react-router-dom"
 import { AuthContext } from "../context/UserContext"
 import { toast } from "react-toastify";
+import BackgroundPicture from "../components/BackgroundPicture";
 
 const Login = () => {
+
 
   const context = useContext(AuthContext)
   const [email , setEmail] = useState<string>('')
@@ -18,14 +20,20 @@ const Login = () => {
     e.preventDefault();
     try {
       await login(email, password);
+      toast.success("Login success!");
       navigate("/"); 
     } catch (err: any) {
       toast.error(err.message);
     }
   };
 
+
+
   return (
     <div className="flex justify-center items-center h-screen bg-[#F5EDE0]">
+      <BackgroundPicture >
+        <div className = "flex justify-center items-center h-screen">
+          
       <form
         onSubmit={handleSubmit}
         className="bg-white shadow-xl border border-[#C8B8A5] py-8 w-[450px] px-8 rounded-2xl"
@@ -72,6 +80,8 @@ const Login = () => {
           </Link>
         </div>
       </form>
+      </div>
+      </BackgroundPicture>
     </div>
   )
 }

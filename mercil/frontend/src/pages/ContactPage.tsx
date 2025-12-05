@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Building2, Send, MessageSquare } from 'lucide-react';
-import Navbar from '../components/Navbar';
+import Navbar from '../components/navbar';
 
                 interface FormDataType {
                   name: string;
@@ -291,21 +291,20 @@ import Navbar from '../components/Navbar';
                               <Phone className="w-10 h-10 text-[#c7a496] mx-auto mb-3" />
                               <h3 className="font-bold text-[#8b6f5e] mb-2">โทรศัพท์</h3>
                               <p className="text-2xl font-bold text-[#c7a496]">1443</p>
-                              <p className="text-sm text-gray-500 mt-1">Call Center</p>
+                              <p className="text-sm text-[#624b3d] mt-1">Call Center</p>
                             </div>
 
                             <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
                               <MessageSquare className="w-10 h-10 text-[#c7a496] mx-auto mb-3" />
                               <h3 className="font-bold text-[#8b6f5e] mb-2">SAM Smile App</h3>
-                              <p className="text-sm text-gray-600">ติดตามข่าวสารและบริการ</p>
-                              <p className="text-xs text-gray-500 mt-1">บนมือถือและแท็บเล็ต</p>
+                              <p className="text-sm text-[#624b3d]">ติดตามข่าวสารและบริการ</p>
                             </div>
 
                             <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
                               <Mail className="w-10 h-10 text-[#c7a496] mx-auto mb-3" />
                               <h3 className="font-bold text-[#8b6f5e] mb-2">อีเมล</h3>
-                              <p className="text-sm text-gray-600 break-all">info@sam.or.th</p>
-                              <p className="text-xs text-gray-500 mt-1">ตอบภายใน 24 ชั่วโมง</p>
+                              <p className="text-sm text-[#6b5040] break-all">info@sam.or.th</p>
+                              <p className="text-xs text-[#624b3d] mt-1">ตอบภายใน 24 ชั่วโมง</p>
                             </div>
                           </div>
                         </div>

@@ -136,7 +136,7 @@ const Navbar = () => {
               ...(user
                 ? [{ name: "รายการโปรด", icon: Heart, link: "/favorite" }]
                 : []),
-              { name: "ติดต่อ", icon: Mail, link: "/contact" },
+              { name: "ติดต่อ", icon: Mail, link: "#" },
             ].map((item) => (
               <a
                 href={item.link || "#"}

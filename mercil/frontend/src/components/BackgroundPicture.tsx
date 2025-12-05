@@ -1,7 +1,9 @@
+// BgSlider.tsx
 import { useEffect, useState } from "react";
 
 type BackgroundProps = {
   children: React.ReactNode;
+
 };
 
 const BackgroundSwitcher = ({ children }: BackgroundProps) => {
@@ -22,6 +24,8 @@ const BackgroundSwitcher = ({ children }: BackgroundProps) => {
     return () => clearInterval(timer);
   }, []);
 
+
+  
   return (
     <div
       className="relative min-h-screen w-full bg-cover bg-center bg-no-repeat transition-all duration-700"

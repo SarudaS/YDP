@@ -1,3 +1,4 @@
+import React from "react";
 import {
   MapPin,
   Phone,
@@ -9,20 +10,20 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-b from-[#8b6f5e] to-[#6d5647] text-white mt-16">
+    <footer className="bg-gradient-to-b from-[#c79e84] to-[#94694d] text-white mt-16">
       <div className="max-w-7xl mx-auto px-2 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
-          {/* ข้อมูลบริษัทและเมนู */}
+          
           <div>
-            <h2 className="text-3xl font-bold mb-6 text-amber-100">
+            <h2 className="text-3xl font-bold mb-6 text-amber-100 ">
               บริษัท บริหารสินทรัพย์สุขุมวิท จำกัด
             </h2>
-            <p className="text-xl mb-8 text-amber-50">SAM</p>
+            <p className="text-xl mb-8 text-amber-50"></p>
 
             <div className="space-y-4 mb-8">
               <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 mt-1 flex-shrink-0 text-amber-300" />
-                <p className="text-sm leading-relaxed">
+                <MapPin className="w-5 h-5 mt-1 flex-shrink-0 text-amber-50" />
+                <p className="text-xl leading-relaxed">
                   สำนักงานใหญ่: 123 อาคารซันทาวเวอร์ส เอ ชั้น 27-30
                   ถนนวิภาวดีรังสิต
                   <br />
@@ -31,8 +32,8 @@ const Footer = () => {
               </div>
 
               <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 flex-shrink-0 text-amber-300" />
-                <p className="text-sm">
+                <Phone className="w-5 h-5 flex-shrink-0 text-amber-50" />
+                <p className="text-xl">
                   1443 หรือ 02-610-2277 • โทรสาร 0-2617-8228 / 0-2617-8232
                 </p>
               </div>
@@ -41,7 +42,7 @@ const Footer = () => {
                 <Mail className="w-5 h-5 flex-shrink-0 text-amber-300" />
                 <a
                   href="mailto:Corp@sam.or.th"
-                  className="text-sm hover:text-amber-200 transition-colors"
+                  className="text-xl hover:text-amber-200 transition-colors"
                 >
                   Corp@sam.or.th
                 </a>
@@ -58,7 +59,7 @@ const Footer = () => {
                   <li>
                     <a
                       href="/"
-                      className="text-sm hover:text-amber-200 transition-colors inline-block"
+                      className="text-xl hover:text-amber-200 transition-colors inline-block"
                     >
                       หน้าแรก
                     </a>
@@ -66,7 +67,7 @@ const Footer = () => {
                   <li>
                     <a
                       href="/about"
-                      className="text-sm hover:text-amber-200 transition-colors inline-block"
+                      className="text-xl hover:text-amber-200 transition-colors inline-block"
                     >
                       เกี่ยวกับเรา
                     </a>
@@ -74,7 +75,7 @@ const Footer = () => {
                   <li>
                     <a
                       href="/properties"
-                      className="text-sm hover:text-amber-200 transition-colors inline-block"
+                      className="text-xl hover:text-amber-200 transition-colors inline-block"
                     >
                       ทรัพย์สินรอการขาย
                     </a>
@@ -82,7 +83,7 @@ const Footer = () => {
                   <li>
                     <a
                       href="/contact"
-                      className="text-sm hover:text-amber-200 transition-colors inline-block"
+                      className="text-xl hover:text-amber-200 transition-colors inline-block"
                     >
                       ติดต่อเรา
                     </a>
@@ -100,7 +101,7 @@ const Footer = () => {
                       href="https://www.facebook.com/SAMNPA"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm hover:text-amber-200 transition-colors inline-flex items-center gap-2"
+                      className="text-xl hover:text-amber-200 transition-colors inline-flex items-center gap-2"
                     >
                       <Facebook className="w-4 h-4" />
                       Facebook
@@ -111,7 +112,7 @@ const Footer = () => {
                       href="https://www.line.me/ti/p/@samline"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm hover:text-amber-200 transition-colors inline-block"
+                      className="text-xl hover:text-amber-200 transition-colors inline-block"
                     >
                       Line @samline
                     </a>
@@ -121,7 +122,7 @@ const Footer = () => {
                       href="https://www.youtube.com/SAMNPAChannel"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm hover:text-amber-200 transition-colors inline-flex items-center gap-2"
+                      className="text-xl hover:text-amber-200 transition-colors inline-flex items-center gap-2"
                     >
                       <Youtube className="w-4 h-4" />
                       YouTube
@@ -195,7 +196,7 @@ const Footer = () => {
       href={item.link}
       target="_blank"
       rel="noopener noreferrer"
-      className="bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl p-5 transition-all group text-center border border-white/20"
+      className="bg-white/10 hover:bg-white/20 backdrop-blur-xl rounded-xl p-5 transition-all group text-center border border-white/20"
     >
       {/* กรอบรูปใหญ่ขึ้น */}
       <div className="bg-white rounded-lg p-4 border border-white/30">
@@ -219,7 +220,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="pt-6">
-          <p className="text-center text-sm text-amber-100">
+          <p className="text-center text-xl text-amber-100">
             © {new Date().getFullYear()} บริษัท บริหารสินทรัพย์สุขุมวิท จำกัด.
             สงวนลิขสิทธิ์ทุกประการ.
           </p>

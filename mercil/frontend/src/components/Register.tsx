@@ -2,7 +2,7 @@ import { useContext, useState } from "react"
 import { Link , useNavigate } from "react-router-dom"
 import { AuthContext } from "../context/UserContext"
 import { toast } from "react-toastify";
-
+import BackgroundPicture from "../components/BackgroundPicture";
 
 const Register = () => {
 
@@ -19,6 +19,7 @@ const Register = () => {
     e.preventDefault();
     try {
       await register(name , email, password);
+      toast.success("Login success!");
       navigate("/"); 
     } catch (err: any) {
       toast.error(err.message);
@@ -27,6 +28,8 @@ const Register = () => {
 
   return (
     <div className="flex justify-center items-center h-screen bg-[#F5EDE0]">
+      <BackgroundPicture >
+        <div className = "flex justify-center items-center h-screen">
       <form
         onSubmit={handleSubmit}
         className="bg-white border border-[#d8c4b8] shadow-xl py-6 w-[600px] px-8 rounded-3xl"
@@ -94,6 +97,9 @@ const Register = () => {
           </Link>
         </div>
       </form>
+      </div>
+      </BackgroundPicture>
+      
     </div>
   )
 }
