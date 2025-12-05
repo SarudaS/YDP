@@ -263,7 +263,7 @@ const AISearch = () => {
         
         /* Remove default outline and add custom focus styles */
         button:focus-visible, input:focus-visible {
-          outline: 2px solid #b58363;
+          outline: ;
           outline-offset: 2px;
         }
         
