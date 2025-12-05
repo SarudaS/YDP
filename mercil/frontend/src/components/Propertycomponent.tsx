@@ -29,7 +29,7 @@ interface PropertyCardProps {
   property: Property;
 }
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://mapbsifmercil.onrender.com';
 
 // ✅ เพิ่มคำว่า export ตรงนี้ (สำคัญมาก)
 export const PropertyCard = ({ property }: PropertyCardProps) => {

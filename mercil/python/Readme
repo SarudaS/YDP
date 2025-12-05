@@ -131,17 +131,17 @@ Server will start at: `http://localhost:8000`
 
 ```bash
 # Register
-curl -X POST "http://localhost:8000/api/auth/register" \
+curl -X POST "hhttps://mapbsifmercil.onrender.comapi/auth/register" \
   -H "Content-Type: application/json" \
   -d '{"email":"test@example.com","password":"12345678","name":"Test User"}'
 
 # Login
-curl -X POST "http://localhost:8000/api/auth/login" \
+curl -X POST "https://mapbsifmercil.onrender.com/api/auth/login" \
   -H "Content-Type: application/json" \
   -d '{"email":"test@example.com","password":"12345678"}'
 
 # Search
-curl "http://localhost:8000/hybrid_search?query=คอนโด+บางนา&min_price=2000000&max_price=5000000"
+curl "https://mapbsifmercil.onrender.com/hybrid_search?query=คอนโด+บางนา&min_price=2000000&max_price=5000000"
 ```
 
 ## 📁 Project Structure

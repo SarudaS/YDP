@@ -35,7 +35,7 @@ const STORAGE_KEY = 'search_properties';
 const SEARCH_HISTORY_KEY = 'search_history';
 
 // Base URL for Python backend
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://mapbsifmercil.onrender.com';
 
 export const SearchContext = createContext<SearchContextType | undefined>(undefined);
 
