@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ChevronDown,CircleQuestionMark } from "lucide-react";
-import Navbar from "../components/navbar";
+import Navbar from "../components/Navbar";
 
 interface Questionspage {
   question: string;

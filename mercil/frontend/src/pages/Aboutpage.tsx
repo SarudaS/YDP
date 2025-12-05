@@ -1,7 +1,7 @@
 import React from 'react';
 import { Users, Target, Award, Heart, Sparkles, Shield, Building2, TrendingUp, Handshake, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import Navbar from '../components/navbar';
+import Navbar from '../components/Navbar';
 
 export default function Aboutpage() {
   return (

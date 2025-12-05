@@ -1,4 +1,4 @@
-import Navbar from './components/navbar.tsx' 
+import Navbar from './components/Navbar.tsx' 
 import AISearch from './components/AISearch.tsx' 
 import Boxsearch from './components/Boxsearch.tsx' 
 import Propertycard from './components/Propertycard.tsx' 

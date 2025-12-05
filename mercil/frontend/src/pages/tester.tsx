@@ -1,6 +1,6 @@
 import React from "react";
 import BackgroundSwitcher from "../components/BackgroundPicture.tsx";
-import Navbar from "../components/navbar.tsx";
+import Navbar from "../components/Navbar.tsx";
 import AISearch from "../components/AISearch.tsx";
 
 const tester = () => {
