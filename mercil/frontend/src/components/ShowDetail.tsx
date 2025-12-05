@@ -175,7 +175,7 @@ const ShowDetail = () => {
     } else {
       const fetchProperty = async () => {
         try {
-          const res = await axios.get(`http://127.0.0.1:8000/property/${id}`);
+          const res = await axios.get(`https://mapbsifmercil.onrender.com/property/${id}`);
           setProperty(res.data);
           setError(false);
         } catch (err) {
@@ -203,7 +203,7 @@ const ShowDetail = () => {
 
       try {
         const response = await axios.get(
-          `http://localhost:8000/api/user/favorite/check/${id}`,
+          `https://mapbsifmercil.onrender.com/api/user/favorite/check/${id}`,
           { headers: { Authorization: `Bearer ${user.token}` } }
         );
 
@@ -231,7 +231,7 @@ const ShowDetail = () => {
 
       if (isFavorite) {
         const response = await axios.delete(
-          'http://localhost:8000/api/user/favorite/remove',
+          'https://mapbsifmercil.onrender.com/api/user/favorite/remove',
           {
             data: { propertyId: id },
             headers: { Authorization: `Bearer ${user.token}` }
@@ -244,7 +244,7 @@ const ShowDetail = () => {
         }
       } else {
         const response = await axios.post(
-          'http://localhost:8000/api/user/favorite/add',
+          'https://mapbsifmercil.onrender.com/api/user/favorite/add',
           { propertyId: id },
           { headers: { Authorization: `Bearer ${user.token}` } }
         );
