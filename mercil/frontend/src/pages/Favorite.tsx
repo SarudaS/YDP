@@ -256,7 +256,7 @@ const FavoritesPage = () => {
             >
               ทั้งหมด
             </button>
-            <button 
+           {/* <button 
               onClick={() => setFilter('sell')}
               className={`px-6 py-2 rounded-full transition ${
                 filter === 'sell' 
@@ -276,6 +276,7 @@ const FavoritesPage = () => {
             >
               เช่า
             </button>
+             */}
           </div>
         </div>
       </section>
