@@ -3,7 +3,7 @@ import { GoogleMap, useJsApiLoader, Marker, InfoWindow, Circle } from '@react-go
 import { MapPin, Home, DollarSign, Navigation } from 'lucide-react';
 import axios from 'axios';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://mapbsifmercil.onrender.com';
 
 interface Property {
   _id: string;

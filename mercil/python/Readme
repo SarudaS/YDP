@@ -95,14 +95,14 @@ docker run -d -p 27017:27017 --name mongodb mongo:7.0
 python main.py
 ```
 
-Server will start at: `http://localhost:8000`
+Server will start at: `https://mapbsifmercil.onrender.com`
 
 ## 📚 API Documentation
 
 ### Interactive API Docs
 
-- Swagger UI: `http://localhost:8000/docs`
-- ReDoc: `http://localhost:8000/redoc`
+- Swagger UI: `https://mapbsifmercil.onrender.com`
+- ReDoc: `https://mapbsifmercil.onrender.com`
 
 ### API Endpoints
 
