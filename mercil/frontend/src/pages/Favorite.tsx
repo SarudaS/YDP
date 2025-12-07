@@ -276,7 +276,7 @@ const FavoritesPage = () => {
             >
               เช่า
             </button>
-             */}
+             */}  
           </div>
         </div>
       </section>
